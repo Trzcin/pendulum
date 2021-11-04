@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Double Pendulum</title>
+    <script src="/src/index.js" type="module" defer></script>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: auto 250px;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        user-select: none;
+        height: 100vh;
+      }
+
+      #canvas {
+        cursor: crosshair;
+      }
+
+      #panel {
+        background-color: #15202b;
+        padding: 0 25px;
+        overflow-y: auto;
+      }
+
+      .pendulum-title {
+        font-weight: bold;
+        font-size: 20px;
+        margin-top: 20px;
+      }
+
+      .pendulum-label {
+        display: block;
+        margin-top: 12px;
+      }
+
+      .pendulum-input {
+        margin-top: 6px;
+        background-color: #263d52;
+        border: none;
+        color: white;
+        font-size: 15px;
+        padding: 10px 6px;
+        border-radius: 5px;
+        width: 100%;
+      }
+
+      .pendulum-input:focus {
+        outline: none;
+      }
+
+      #top {
+        display: flex;
+        flex-direction: row;
+        padding-top: 20px;
+        justify-content: center;
+      }
+
+      button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin: 0 5px;
+      }
+
+      button:focus {
+        outline: none;
+      }
+
+      img {
+        width: 50px;
+        height: auto;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <div id="panel">
+      <div id="top">
+        <button id="play-btn">
+          <img src="./icons/play.svg" alt="toggle play" />
+        </button>
+        <button id="restart-btn">
+          <img src="./icons/restart.svg" alt="restart" />
+        </button>
+      </div>
+
+      <p class="pendulum-title">Pednulum 1</p>
+      <label for="r1" class="pendulum-label">Length 1</label>
+      <input type="number" name="r1" id="r1" class="pendulum-input" />
+      <label for="m1" class="pendulum-label">Mass 1</label>
+      <input type="number" name="m1" id="m1" class="pendulum-input" />
+      <label for="a1" class="pendulum-label">Angle 1</label>
+      <input type="number" name="a1" id="a1" class="pendulum-input" />
+
+      <p class="pendulum-title">Pednulum 2</p>
+      <label for="r2" class="pendulum-label">Length 2</label>
+      <input type="number" name="r2" id="r2" class="pendulum-input" />
+      <label for="m2" class="pendulum-label">Mass 2</label>
+      <input type="number" name="m2" id="m2" class="pendulum-input" />
+      <label for="a2" class="pendulum-label">Angle 2</label>
+      <input type="number" name="a2" id="a2" class="pendulum-input" />
+
+      <p class="pendulum-title">Other</p>
+      <label for="g" class="pendulum-label">Gravity</label>
+      <input type="number" name="g" id="g" class="pendulum-input" />
+      <label for="bs" class="pendulum-label">Ball Scale</label>
+      <input type="number" name="bs" id="bs" class="pendulum-input" />
+      <label for="lw" class="pendulum-label">Line Width</label>
+      <input type="number" name="lw" id="lw" class="pendulum-input" />
+    </div>
+  </body>
+</html>
